@@ -3,140 +3,121 @@
  */
 
 /* html is set to 62.5% so that all the REM measurements are based on 10px sizing. So basically 1.5rem = 15px */
-html {
-  font-size: 62.5%;
+@font-face {
+    font-family: 'medium';
+    src: url('font/Yekan-Bakh-FaNum-05-Medium.woff');
 }
-body {
-  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
-  line-height: 1.6;
-  font-weight: 400;
-  font-family: "Roboto", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #FFFFFF;
-  direction: rtl;
+@font-face {
+    font-family: 'medium';
+    src: url('font/Yekan-Bakh-FaNum-05-Medium.ttf');
 }
-
-/**
- * Links
- */
-a {
-  font-weight: normal;
-  text-decoration: none; 
-  color:#EF6D3D;
+@font-face {
+    font-family: 'fat';
+    src: url('font/Yekan-Bakh-FaNum-08-Fat.woff');
 }
-a:focus {
-  outline: thin dotted;
+@font-face {
+    font-family: 'fat';
+    src: url('font/Yekan-Bakh-FaNum-08-Fat.ttf');
 }
-
-small {
-  font-size: 75%;
+:root {
+    --font-main:'medium';
+    --bgcolor-main:#27282C;
+    --txtcolor-main:#F5F6F6;
+    --txtcolor-main2:#979797;
+    --txtcolor-main3:rgba(255,255,255,0.7);
+    --primery-color:#31CAB9;
+    --font-fat:'fat';
 }
 
-/**
- * Headings
- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1;
-  text-rendering: optimizeLegibility; /*  voodoo to enable ligatures and kerning | https://developer.mozilla.org/en-US/docs/CSS/text-rendering */
-  margin-top: 0;
-  margin-bottom: 2rem;
-  font-weight: 300;
+body{
+    direction: rtl;
+    font-family: var(--font-main);
+    padding: 20px 80px 0 80px;
+    margin: 0 0;
+    background: var(--bgcolor-main);
+    color: var(--txtcolor-main) !important;
 }
-h1 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem; }
-h2 { font-size: 3.0rem; line-height: 1.3;  letter-spacing: -.1rem; }
-h3 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem; }
-h4 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
-h5 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
-h6 { font-size: 1.4rem; line-height: 1.6;  letter-spacing: 0; }
+h1{font-family: var(--font-main);}
+h2{font-family: var(--font-main);}
+h3{font-family: var(--font-main);}
+h4{font-family: var(--font-main);}
+h5{font-family: var(--font-main);}
+p{font-family: var(--font-main);}
+input{font-family: var(--font-main) !important;}
+a{font-family: var(--font-main);text-decoration: none;color: var(--txtcolor-main);}
+.row{padding: 0;margin: 0;}
 
-/**
- * Paragraphs
- */
-p {
-  margin: 0 auto 1.5em auto; /* bottom margin for paragraphs */
+#big-mtn{
+    font-family: var(--font-fat);
+    font-size: 20px;
+    color: var(--txtcolor-main);
 }
-p + p {
+.short-mtn{
+    font-size: 15px;
+    color: var(--txtcolor-main);
+}
+#color2{
+    color: var(--txtcolor-main2);
+}
+.name{
 
 }
+#rowBody {
+    padding: 30px 0;
+}
+.section1{
+    padding: 5px;
+    margin-bottom: 20px;
+}
+.maintext3{
+    color: var(--txtcolor-main3);
+    font-size: 17px;
 
-/**
- * Quotes & Blockquotes
- */
-q {
-  quotes: '\00201C' '\00201D';
 }
-q:before {
-  content: open-quote;
-}
-q:after {
-  content: close-quote;
-}
+.textnorm{line-height: 180%;
+    padding: 5px 20px;}
 
-blockquote {
-  /*background-color: #F8F8F8;*/
-  border-left: 2px solid #AFC0D2;
-  margin: 1.6em 10%;
-  padding: .75em 1em;
-  font-size:1.8rem;
-}
-blockquote p:last-child {
-  margin-bottom: 0;  
-}
-
-/**
- * Layout styles
- */
-
-/* Full size background image */
-html, #container, .inner { background-color:transparent;}
-html {
-  background:url(background.jpg) center center no-repeat fixed;
-  background-size:cover;
-}
-body {
-  max-width:800px;
-  margin:25px auto;
-}
-header, #content, footer { 
-  background: rgba(0,0,0,.8); 
-  padding:25px;
-  color:#FFFFFF; 
+.textnorm1{
+    line-height: 180%;
+    padding: 5px 20px;
+    font-size: 15px;
+    font-family: var(--font-fat);
+    color: var(--txtcolor-main3);
 }
 
-/* Menu Links */
-ul.main-menu {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-  list-style: none;
+#spanDet {
+    border: 1px solid var(--primery-color);
+    color: var(--primery-color);
+    font-size: 12px;
+    font-family: var(--font-fat);
+    padding: 3px 10px;
+    border-radius: 97px;
 }
-ul.main-menu li a {
-  margin-right:20px;
-  font-size:2.0rem;
-  border-bottom: solid transparent 3px;
-  color:#cfd2da;
+#project {
+    border-right: 1px solid var(--primery-color);
 }
-ul.main-menu li a:hover {
-  color:#FFFFFF;
+#project-title a {
+    color: rgba(255,255,255,0.7);
 }
-ul.main-menu li a.active {
-  color:#FFFFFF;
-  border-bottom-color:#EF6D3D;
+#project-title a:hover {
+    color: rgba(255,255,255,0.7);
 }
 
-/* Utility classes */
-.hide {
-  display:none;
-}
-.show {
-  display:block;
+#project1 {
+    border-right: 1px solid var(--primery-color);
+    padding: 5px 0;
+    margin-top: 7px;
 }
 
-
+#footer1 {
+    margin-top: 20px;
+    padding: 0 30px;
+}
+#phone {
+    background: var(--primery-color);
+    color: #000;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+}
 
