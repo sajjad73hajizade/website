@@ -121,3 +121,8 @@ a{font-family: var(--font-main);text-decoration: none;color: var(--txtcolor-main
     border-radius: 5px;
 }
 
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+}
